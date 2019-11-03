@@ -1,0 +1,67 @@
+<configs>
+
+<!--	// MODLET:			SMXmenuPatch
+
+		// EAC:				Friendly
+
+		// VERSION:			A18.1b5r1
+
+		// BUILD:			A18.1b5e
+
+		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
+							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
+							and you can verify this by looking at the date of the standard files when an update have occured.
+
+		// MOD DESCRIPTION:	The purpose of this modlet is to bridge the gap between release and experimental versions without affecting the stable branch.
+
+		// DEPENDENCIES:	SMXmenu.
+
+		// TERMS OF USE:	You are allowed to use this modlet as is for your own personal use and/or distribute said modlet bundled with something of your
+							own creation as long as all the files of this modlet remain unaltered and you do not claim credit for creating the modlet itself
+							or any of the files provided with it.
+
+							You are welcome, but not required, to inform the developer of this modlet should you wish to bundle and re-distribute said modlet
+							as described above.
+
+							You are not allowed to use any of the assets bundled with this modlet in other projects where said modlet is not included
+							and credited. This restriction applies to all files that this modlet consist of.
+
+							You are required to inform and ask permission from the developer of this modlet should you wish to make changes to any files
+							provided with the intention to bundle and/or distribute.
+
+							Should permission be granted you are required to make the changes as a new modlet that injects into the modlet in question and
+							keeping load order in mind. The original modlet shall be distributed as is with no change to its files whatsoever.
+
+		// CREDITS:			Sirillion (author)
+-->
+
+<!--	// SMX // Basic Settings -->
+
+		<set xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiGameSettingsBasic']/grid/gameoption[@name='BloodMoonFrequency']/@values">0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 20, 30</set>
+
+
+<!--	// SMX // Advanced Settings -->
+
+		<set xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiGameSettingsAdvanced']/grid/gameoption[@name='BlockDamageAI']/@values">25, 33, 50, 67, 75, 100, 125, 150, 175, 200, 300</set>
+		<set xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiGameSettingsAdvanced']/grid/gameoption[@name='BlockDamageAIBM']/@values">25, 33, 50, 67, 75, 100, 125, 150, 175, 200, 300</set>
+		<set xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiGameSettingsAdvanced']/grid/gameoption[@name='LootAbundance']/@values">25, 33, 50, 67, 75, 100, 150, 200</set>
+		<set xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiGameSettingsAdvanced']/grid/gameoption[@name='BloodMoonEnemyCount']/@values">4, 6, 8, 10, 12, 16, 24, 32, 64</set>
+
+
+<!--	// SMX // Video Options -->
+
+		<set xpath="/windows/window[@name='optionsVideo']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiOptionsVideoQuality']/smx_videooption_1[@name='QualityPreset']/@values">Lowest,Low,Medium,High,Ultra,Custom</set>
+
+		<insertAfter xpath="/windows/window[@name='optionsVideo']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiOptionsVideoQuality']/grid/smx_videooption_1[@name='TextureQuality']">
+								<smx_videooption_1 name="TextureFilter" type="ComboBoxList&lt;System.String&gt;" values="Low,Medium,High,Ultra,Ultra+" value_wrap="false" />
+		</insertAfter>
+
+		<remove xpath="/windows/window[@name='optionsVideo']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiOptionsVideoQuality']/grid/rect[1]" />
+
+
+<!--	// SMX // Audio Options -->
+
+		<setattribute xpath="/windows/window[@name='optionsAudio']/panel[@name='SMXcontentPanel']/grid[@name='SMXcontentGrid']/smx_audiooption_1[@name='DynamicMusicEnabled']" name="visible">{notinlinux}</setattribute>
+		<setattribute xpath="/windows/window[@name='optionsAudio']/panel[@name='SMXcontentPanel']/grid[@name='SMXcontentGrid']/smx_audiooption_1[@name='DynamicMusicDailyTimeAllotted']" name="visible">{notinlinux}</setattribute>
+
+</configs>
