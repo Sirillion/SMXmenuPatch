@@ -9,6 +9,6 @@
 	<!--	// SMX // Audio Options -->
 
 		<setattribute xpath="/controls/smx_videooption_1/rect/label" name="visible">${visible|true}</setattribute>
-		<setattribute xpath="/controls/smx_videooption_1/rect/combobox" name="visible">${visible|true}</setattribute>
+		<setattribute xpath="/controls/smx_videooption_1/rect/smx_video_combobox_1" name="visible">${visible|true}</setattribute>
 
 </configs>
