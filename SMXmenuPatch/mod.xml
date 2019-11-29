@@ -1,0 +1,13 @@
+<mod>
+	<info>
+		<author>Sirillion</author>
+		<name>SMXmenuPatch</name>
+		<description>SMXmenuPatch is used to patch SMXmenu to the current experimental branch.</description>
+		<mod_version>A18.2B5e</mod_version>
+		<game_version>18.2</game_version>
+		<launcher_version>0.0.0</launcher_version>
+	</info>
+	<dependencies>
+		<dependency>SMXmenu</dependency>
+	</dependencies>
+</mod>

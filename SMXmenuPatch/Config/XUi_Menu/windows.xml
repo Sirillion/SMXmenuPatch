@@ -4,9 +4,9 @@
 
 		// EAC:				Friendly
 
-		// VERSION:			A18.1b6r1
+		// VERSION:			A18.2b5r1
 
-		// BUILD:			A18.1b6e
+		// BUILD:			A18.2b5e
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -35,33 +35,12 @@
 		// CREDITS:			Sirillion (author)
 -->
 
-<!--	// SMX // Basic Settings -->
-
-		<set xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiGameSettingsBasic']/grid/gameoption[@name='BloodMoonFrequency']/@values">0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 20, 30</set>
-
-
-<!--	// SMX // Advanced Settings -->
-
-		<set xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiGameSettingsAdvanced']/grid/gameoption[@name='BlockDamageAI']/@values">25, 33, 50, 67, 75, 100, 125, 150, 175, 200, 300</set>
-		<set xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiGameSettingsAdvanced']/grid/gameoption[@name='BlockDamageAIBM']/@values">25, 33, 50, 67, 75, 100, 125, 150, 175, 200, 300</set>
-		<set xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiGameSettingsAdvanced']/grid/gameoption[@name='LootAbundance']/@values">25, 33, 50, 67, 75, 100, 150, 200</set>
-		<set xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiGameSettingsAdvanced']/grid/gameoption[@name='BloodMoonEnemyCount']/@values">4, 6, 8, 10, 12, 16, 24, 32, 64</set>
-
-
 <!--	// SMX // Video Options -->
 
-		<set xpath="/windows/window[@name='optionsVideo']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiOptionsVideoQuality']/smx_videooption_1[@name='QualityPreset']/@values">Lowest,Low,Medium,High,Ultra,Custom</set>
-
-		<insertAfter xpath="/windows/window[@name='optionsVideo']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiOptionsVideoQuality']/grid/smx_videooption_1[@name='TextureQuality']">
-								<smx_videooption_1 name="TextureFilter" type="ComboBoxList&lt;System.String&gt;" values="Low,Medium,High,Ultra,Ultra+" value_wrap="false" />
-		</insertAfter>
+		<insertBefore xpath="/windows/window[@name='optionsVideo']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiOptionsVideoQuality']/grid/smx_videooption_1[@name='TreeQuality']">
+								<smx_videooption_1 name="TerrainQuality" type="ComboBoxList&lt;System.String&gt;" values="Lowest,Low,Medium,High,Ultra" localization_prefix="xuiOptionsVideoPresets" value_wrap="false" />
+		</insertBefore>
 
 		<remove xpath="/windows/window[@name='optionsVideo']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiOptionsVideoQuality']/grid/rect[1]" />
-
-
-<!--	// SMX // Audio Options -->
-
-		<setattribute xpath="/windows/window[@name='optionsAudio']/panel[@name='SMXcontentPanel']/grid[@name='SMXcontentGrid']/smx_audiooption_1[@name='DynamicMusicEnabled']" name="visible">{notinlinux}</setattribute>
-		<setattribute xpath="/windows/window[@name='optionsAudio']/panel[@name='SMXcontentPanel']/grid[@name='SMXcontentGrid']/smx_audiooption_1[@name='DynamicMusicDailyTimeAllotted']" name="visible">{notinlinux}</setattribute>
 
 </configs>
